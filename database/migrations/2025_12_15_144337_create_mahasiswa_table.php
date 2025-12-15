@@ -15,18 +15,16 @@ return new class extends Migration {
             $table->string('nim')->unique();
             $table->string('nama');
             $table->string('prodi');
-            $table->decimal('sks', 3, 2);
+
+            // [Perbaikan] Ubah decimal(3,2) menjadi integer
+            $table->integer('sks');
+
+            // [Tambahan] Tambahkan kolom IPK karena dipakai di View
+            $table->decimal('ipk', 3, 2); // Contoh: 3.85 (Maks 9.99 cukup untuk IPK)
+
             $table->enum('status', ['aktif', 'cuti', 'lulus', 'drop out']);
             $table->enum('kategori', ['reguler', 'internasional']);
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('mahasiswa');
     }
 };

@@ -16,6 +16,7 @@ class Mahasiswa extends Model
         'nama',
         'prodi',
         'sks',
+        'ipk',
         'status',
         'kategori',
     ];
