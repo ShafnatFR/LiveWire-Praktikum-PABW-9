@@ -20,7 +20,7 @@ class MahasiswaFactory extends Factory
             'nim'       => $this->faker->unique()->numerify('607012######'),
             'nama'      => $this->faker->name(),
             'prodi'     => $this->faker->randomElement(['D3 Sistem Informasi', 'S1 Teknik Industri', 'S1 Administrasi Negara']),
-            'sks'       => $this->faker->numberBetween(10, 144),
+            'sks'       => $this->faker->randomFloat(2, 2, 4),
             'status'    => $this->faker->randomElement(['aktif', 'cuti', 'lulus', 'drop out']),
             'kategori'  => $this->faker->randomElement(['reguler', 'internasional']),
         ];

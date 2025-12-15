@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('nim')->unique();
             $table->string('nama');
             $table->string('prodi');
-            $table->unsignedTinyInteger('sks');
+            $table->decimal('sks', 3, 2);
             $table->enum('status', ['aktif', 'cuti', 'lulus', 'drop out']);
             $table->enum('kategori', ['reguler', 'internasional']);
             $table->timestamps();
