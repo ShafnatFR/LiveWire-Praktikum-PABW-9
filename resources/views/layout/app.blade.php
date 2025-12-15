@@ -8,10 +8,15 @@
 </head>
 <body>
 
-    <div class="container mt-4">
+    {{-- 1. Panggil Header di sini --}}
+    @include('layouts.header')
+
+    <div class="container mt-4" style="min-height: 80vh;">
         @yield('content')
     </div>
 
+    {{-- 2. Panggil Footer di sini --}}
+    @include('layouts.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

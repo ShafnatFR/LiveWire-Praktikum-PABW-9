@@ -1,66 +1,12 @@
-<?php
-
-namespace App\Http\Controllers;
-
-use App\Models\Mahasiswa;
-use Illuminate\Http\Request;
-
-class MahasiswaController extends Controller
+// app/Http/Controllers/MahasiswaController.php
+public function index()
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $mahasiswa = Mahasiswa::all();
-        return view('index', compact('mahasiswa'));
-    }
+    $mahasiswa = [
+        ['nim' => '120221001', 'nama' => 'Andi', 'prodi' => 'Informatika', 'sks' => 150, 'ipk' => 3.85],
+        ['nim' => '120221002', 'nama' => 'Budi', 'prodi' => 'Sistem Informasi', 'sks' => 75, 'ipk' => 3.20],
+        ['nim' => '120221003', 'nama' => 'Caca', 'prodi' => 'Teknik Elektro', 'sks' => 130, 'ipk' => 3.60],
+        ['nim' => '120221004', 'nama' => 'Dedi', 'prodi' => 'DKV', 'sks' => 145, 'ipk' => 2.90],
+    ];
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    return view('index', compact('mahasiswa'));
 }
